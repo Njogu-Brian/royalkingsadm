@@ -1,0 +1,133 @@
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s; /* Transition for smooth mode change */
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s; /* Transition for smooth mode change */
+}
+
+h1 {
+    text-align: center;
+    color: #6A5ACD; /* Slate Blue */
+}
+
+h2 {
+    color: #8A2BE2; /* Blue Violet */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    padding: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    background-color: #8A2BE2; /* Blue Violet */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+button:hover {
+    background-color: #7B68EE; /* Medium Slate Blue */
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section:first-of-type {
+    display: block; /* Show the first section by default */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Reduce padding on small screens */
+    }
+
+    .container {
+        padding: 10px; /* Reduce padding on the container */
+    }
+
+    button {
+        width: 100%; /* Make buttons full width on small screens */
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1e1e1e; /* Dark background */
+    color: white; /* Light text */
+}
+
+.container.dark-mode {
+    background: #2c2c2c; /* Darker container */
+}
+
+h1.dark-mode,
+h2.dark-mode {
+    color: #dcdcdc; /* Lighter colors for headings in dark mode */
+}
+
+input[type="text"].dark-mode,
+input[type="date"].dark-mode,
+input[type="tel"].dark-mode,
+input[type="email"].dark-mode,
+input[type="file"].dark-mode,
+select.dark-mode,
+textarea.dark-mode {
+    background: #3a3a3a; /* Dark input fields */
+    color: white; /* Light text in inputs */
+    border: 1px solid #555; /* Darker border */
+}
+
+button.dark-mode {
+    background-color: #5c5c5c; /* Darker button */
+}
+
+button.dark-mode:hover {
+    background-color: #7B68EE; /* Consistent hover effect */
+}
+.required:after {
+    content: " *";
+    color: red;
+}

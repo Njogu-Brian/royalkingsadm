@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Kings Admission Form</title>
+    <link rel="icon" href="assets/small logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="toggleDarkMode" style="position: absolute; top: 20px; right: 20px;">Toggle Dark Mode</button>
+    <div class="container">
+        <h1>Royal Kings Admission Form</h1>
+        <form id="admissionForm" method="POST" action="submit.php" enctype="multipart/form-data">
+            <div class="form-section" id="section1">
+                <h2>Section 1: Student Details</h2>
+                <label for="class" class="required">Select Class</label>
+                <select id="class" name="class" required>
+                    <option value="">Select Class</option>
+                    <option value="CRECHE">CRECHE</option>
+                    <option value="PP1">PP1</option>
+                    <option value="PP2">PP2</option>
+                    <option value="GRADE 1">GRADE 1</option>
+                    <option value="GRADE 2">GRADE 2</option>
+                    <option value="GRADE 3">GRADE 3</option>
+                    <option value="GRADE 4">GRADE 4</option>
+                    <option value="GRADE 5">GRADE 5</option>
+                    <option value="GRADE 6">GRADE 6</option>
+                    <option value="GRADE 7">GRADE 7</option>
+                    <option value="GRADE 8">GRADE 8</option>
+                    <option value="GRADE 9">GRADE 9</option>
+                </select>
+
+                <label for="surname" class="required">Surname</label>
+                <input type="text" id="surname" name="surname" required>
+
+                <label for="firstName" class="required">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="middleName" class="required">Middle Name</label>
+                <input type="text" id="middleName" name="middleName" required>
+
+                <label for="gender" class="required">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="dob" class="required">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="birthCertNo">Birth Certificate Number</label>
+                <input type="text" id="birthCertNo" name="birthCertNo">
+
+                <label for="passportPhoto">Passport Photo Upload</label>
+                <input type="file" id="passportPhoto" name="passportPhoto" accept="image/jpeg, image/png, image/gif">
+
+                <button type="button" class="next-btn" onclick="nextSection(1)">Next</button>
+            </div>
+
+            <div class="form-section" id="section2" style="display:none;">
+                <h2>Section 2: Address and Bio Data</h2>
+                <label for="country" class="required">Country</label>
+                <select id="country" name="country" required>
+                    <option value="Kenya">Kenya</option>
+                </select>
+
+                <label for="postalAddress">Postal Address</label>
+                <input type="text" id="postalAddress" name="postalAddress">
+
+                <label for="city">City</label>
+                <input type="text" id="city" name="city">
+
+                <label for="county" class="required">Select County</label>
+                <select id="county" name="county" required>
+                    <option value="Kiambu">Kiambu</option>
+                    <option value="Nairobi">Nairobi</option>
+                </select>
+
+                <label for="residence" class="required">Residence</label>
+                <input type="text" id="residence" name="residence" required>
+
+                <label for="religion" class="required">Religion</label>
+                <select id="religion" name="religion" required>
+                    <option value="Christian Catholic">Christian Catholic</option>
+                    <option value="Christian Protestant">Christian Protestant</option>
+                    <option value="Muslim">Muslim</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <button type="button" class="prev-btn" onclick="prevSection(2)">Previous</button>
+                <button type="button" class="next-btn" onclick="nextSection(2)">Next</button>
+            </div>
+
+            <div class="form-section" id="section3" style="display:none;">
+                <h2>Section 3: Parents Details</h2>
+                <h3>Mother's Details</h3>
+                <label for="motherFullName" class="required">Full Name</label>
+                <input type="text" id="motherFullName" name="motherFullName" required>
+
+                <label for="motherPhone" class="required">Phone Number</label>
+                <input type="tel" id="motherPhone" name="motherPhone" required>
+
+                <label for="motherEmail" class="required">Email Address</label>
+                <input type="email" id="motherEmail" name="motherEmail" required>
+
+                <label for="motherID" class="required">ID Number/Passport No</label>
+                <input type="text" id="motherID" name="motherID" required>
+
+                <h3>Nominee (In case parent/guardian is unavailable)</h3>
+                <label for="nomineeFullName" class="required">Full Names</label>
+                <input type="text" id="nomineeFullName" name="nomineeFullName" required>
+
+                <label for="nomineeContact" class="required">Nominee's Contact Number</label>
+                <input type="tel" id="nomineeContact" name="nomineeContact" required>
+
+                <button type="button" class="prev-btn" onclick="prevSection(3)">Previous</button>
+                <button type="button" class="next-btn" onclick="nextSection(3)">Next</button>
+            </div>
+
+            <div class="form-section" id="section4" style="display:none;">
+                <h2>Section 4: Additional Details</h2>
+                <label for="previousSchoolName">Previous School Name</label>
+                <input type="text" id="previousSchoolName" name="previousSchoolName">
+
+                <label for="previousSchoolAdmNo">Previous School Adm No</label>
+                <input type="text" id="previousSchoolAdmNo" name="previousSchoolAdmNo">
+
+                <label for="assessmentNo">Assessment No</label>
+                <input type="text" id="assessmentNo" name="assessmentNo">
+
+                <label for="reasonForLeaving">Reason for Leaving and/or Reason for Choosing Our School</label>
+                <textarea id="reasonForLeaving" name="reasonForLeaving"></textarea>
+
+                <button type="button" class="prev-btn" onclick="prevSection(4)">Previous</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function nextSection(current) {
+            const currentSection = document.getElementById(`section${current}`);
+            if (currentSection.checkValidity()) {
+                currentSection.style.display = 'none';
+                document.getElementById(`section${current + 1}`).style.display = 'block';
+            } else {
+                currentSection.reportValidity();
+            }
+        }
+
+        function prevSection(current) {
+            document.getElementById(`section${current}`).style.display = 'none';
+            document.getElementById(`section${current - 1}`).style.display = 'block';
+        }
+
+        const toggleButton = document.getElementById('toggleDarkMode');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const container = document.querySelector('.container');
+            container.classList.toggle('dark-mode');
+            const inputs = document.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.classList.toggle('dark-mode');
+            });
+            toggleButton.classList.toggle('dark-mode');
+        });
+    </script>
+    
+</body>
+</html>
